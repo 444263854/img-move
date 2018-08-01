@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>头像选择框</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #456;
+        }
+
+        .wrap {
+            position: relative;
+            margin: 10vh 100px 0 10vh;
+            background-image: url('./images/1.png');
+            background: rgba(0, 0, 0, .3);
+            width: 500px;
+            height: 500px;
+        }
+
+        .move {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-image: url('./images/1.png');
+            cursor: move;
+            box-shadow: 0 0 0 1px #fff;
+            z-index: 10;
+        }
+
+        .move>div {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: #f91;
+            position: absolute;
+        }
+
+        .move>:nth-child(1) {
+            left: -10px;
+            top: -10px;
+            cursor: se-resize;
+        }
+
+        .move>:nth-child(2) {
+            right: -10px;
+            top: -10px;
+            cursor: ne-resize;
+        }
+
+        .move>:nth-child(3) {
+            right: -10px;
+            bottom: -10px;
+            cursor: se-resize;
+        }
+
+        .move>:nth-child(4) {
+            left: -10px;
+            bottom: -10px;
+            cursor: ne-resize;
+        }
+
+        .move>:nth-child(5) {
+            top: -10px;
+            left: 50%;
+            transform: translateX(-10px);
+            cursor: n-resize;
+        }
+
+        .move>:nth-child(6) {
+            right: -10px;
+            top: 50%;
+            transform: translateY(-10px);
+            cursor: e-resize;
+        }
+
+        .move>:nth-child(7) {
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-10px);
+            cursor: n-resize;
+        }
+
+        .move>:nth-child(8) {
+            left: -10px;
+            top: 50%;
+            transform: translateY(-10px);
+            cursor: e-resize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="move">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="rightImg"></div>
+    <div class="clip"></div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
