@@ -133,7 +133,6 @@ function childHandler(ev) {
                 } else if (changeY >= origheight - minHeight) {
                     changeY = origheight - minHeight
                 }
-                move.style['bottom'] = origBottom + 'px'
                 move.style['top'] = origTop + changeY + 'px'
                 move.style['width'] = origwidth + changeX + 'px'
                 move.style['height'] = origheight - changeY + 'px'
@@ -142,11 +141,11 @@ function childHandler(ev) {
                 break;
             case 3:
                 // 右下角
-                if (changeX >= origRight) {
-                    changeX = origRight
+                if (changeX >= wrapWidth - origRight) {
+                    changeX = wrapWidth - origRight
                 }
-                if (changeY >= origBottom) {
-                    changeY = origBottom
+                if (changeY >= wrapHeight - origBottom) {
+                    changeY = wrapHeight - origBottom
                 }
                 move.style['width'] = origwidth + changeX + 'px'
                 move.style['height'] = origheight + changeY + 'px'
@@ -162,7 +161,6 @@ function childHandler(ev) {
                     changeY = wrapHeight - origBottom
                 }
 
-                move.style['right'] = origRight + 'px'
                 move.style['left'] = origLeft + changeX + 'px'
                 move.style['width'] = origwidth - changeX + 'px'
                 move.style['height'] = origheight + changeY + 'px'
@@ -176,7 +174,6 @@ function childHandler(ev) {
                     changeY = origheight - minHeight
                 }
 
-                move.style['bottom'] = origBottom + 'px'
                 move.style['top'] = origTop + changeY + 'px'
                 move.style['height'] = origheight - changeY + 'px'
                 move.style['backgroundPositionY'] = `-${origTop + changeY}px `;
@@ -200,7 +197,6 @@ function childHandler(ev) {
                     changeX = origwidth - minWidth
                 }
                 move.style['left'] = origLeft + changeX + 'px'
-                move.style['right'] = origRight + 'px'
                 move.style['width'] = origwidth - changeX + 'px'
                 move.style['backgroundPositionX'] = `-${origLeft + changeX}px `;
                 break;
